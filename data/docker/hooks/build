@@ -2,4 +2,17 @@
 # Hook build because of BuildKit
 # Required because of per Dockerfile .dockerignore
 export DOCKER_BUILDKIT=1
+
+echo "SOURCE_BRANCH   = $SOURCE_BRANCH"
+echo "SOURCE_COMMIT   = $SOURCE_COMMIT"
+echo "COMMIT_MSG      = $COMMIT_MSG"
+echo "DOCKER_REPO     = $DOCKER_REPO"
+echo "DOCKERFILE_PATH = $DOCKERFILE_PATH"
+echo "DOCKER_TAG      = $DOCKER_TAG"
+echo "IMAGE_NAME      = $IMAGE_NAME"
+
+echo "PWD $(pwd)"
+echo "Find"
+find . -maxdepth 2
+
 docker build -t "$IMAGE_NAME" -f "$DOCKERFILE_PATH" .
