@@ -16,6 +16,4 @@ echo "PWD $(pwd)"
 echo "Find"
 find . -maxdepth 2
 
-cd ../../
-pwd
-docker build -t "$IMAGE_NAME" -f "$DOCKERFILE_PATH" .
+docker build -t "$IMAGE_NAME" -f "$DOCKERFILE_PATH" ../../
