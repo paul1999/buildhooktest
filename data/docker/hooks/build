@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -x
 # Hook build because of BuildKit
 # Required because of per Dockerfile .dockerignore
 export DOCKER_BUILDKIT=1
@@ -15,4 +16,6 @@ echo "PWD $(pwd)"
 echo "Find"
 find . -maxdepth 2
 
-docker build -t "$IMAGE_NAME" -f "$DOCKERFILE_PATH" ../../../
+cd ../../
+pwd
+docker build -t "$IMAGE_NAME" -f "$DOCKERFILE_PATH" .
